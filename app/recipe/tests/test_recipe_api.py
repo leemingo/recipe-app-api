@@ -251,7 +251,7 @@ class RecipeImageUploadTest(TestCase):
         serializer3 = RecipeSerializer(recipe3)
         self.assertIn(serializer1.data, res.data)
         self.assertIn(serializer2.data, res.data)
-        self.assertIn(serializer3.data, res.data)
+        self.assertNotIn(serializer3.data, res.data)
 
     def test_filter_recipes_by_ingredients(self):
         '''Test returning recipes with specific ingredients'''
@@ -274,4 +274,4 @@ class RecipeImageUploadTest(TestCase):
         serializer3 = RecipeSerializer(recipe3)
         self.assertIn(serializer1.data, res.data)
         self.assertIn(serializer2.data, res.data)
-        self.assertIn(serializer3.data, res.data)
+        self.assertNotIn(serializer3.data, res.data)
